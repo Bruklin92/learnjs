@@ -5,8 +5,8 @@ function validateForm() {
     let mobi = document.contactForm.mobile.value;
     let country = document.contactForm.country.value;
     let gender = document.contactForm.gender;
-
-
+    let hobbies = document.contactForm.hobbies;
+    let formvalidation = true;
 
     if (fname == ''){
         document.getElementById("nameErr").innerHTML="PLease enter your name";
@@ -51,7 +51,6 @@ function validateForm() {
     }
 
     let flag = false;
-
     for (let i=0; i<gender.length; i++) {
         if (gender[i].checked == true){
             flag=true;
@@ -64,5 +63,18 @@ function validateForm() {
         document.getElementById("genderErr").innerHTML="please select gender";
     }
 
-    return false;
+    let hobbi = 0;
+    for (let i = 0; i < hobbies.length; i++) {
+        if (hobbies[i].checked){
+            hobbi++;
+        }
+    }
+    if (hobbi < 2) {
+        document.getElementById("hobbyErr").innerHTML="please select your hobbies";
+        formvalidation = false;
+    } else {
+        document.getElementById("hobbyErr").innerHTML="";
+    }
+    
+    return formvalidation;
 }
