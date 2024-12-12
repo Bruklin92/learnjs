@@ -1,5 +1,5 @@
-let a=[1, 2, 3, 4, 52, 5];
-let a2=new Array(5, 4, 3, 2, 1);
+// let a=[1, 2, 3, 4, 52, 5];
+// let a2=new Array(5, 4, 3, 2, 1);
 // console.log(typeof a2);                                     //OBJECT
 
 // console.log(a.length, a);
@@ -42,3 +42,47 @@ let a2=new Array(5, 4, 3, 2, 1);
 // let ans = a.find((v) => v>500)               // return value of first match in array
 // let ans = a.includes(1);                     // return boolean for spesific element of array
 // console.log(ans);
+
+//-----------------------------home------------------------------------------------//
+
+// slice                                            //retun a selected elment of array
+// const sub = ["oop", "os", "dpa", "java", ".net"];
+// const book = sub.slice(1, 3);
+// console.log(book);
+
+// const a = [1, 2, 3, 4, 5];
+// const n = a.slice(2, 4);
+// console.log(n);
+
+// indexof                                   // return index number of array elemnet 
+// const sub = ["oop", "os", "dpa", "java", ".net"];
+// let index = sub.indexOf("dpa");
+// console.log(index);
+
+// const a = [1, 2, 3, 4, 5];
+// const n = a.indexOf(2);
+// console.log(n);
+
+//reverse                                     // return the reverseorder of array element
+// const sub = ["oop", "os", "dpa", "java", ".net"];
+// sub.reverse();
+// console.log(sub);
+
+// const a = [1, 2, 3, 4, 5];
+// a.reverse();
+// console.log(n);
+
+//fill                                      //new array of element
+// const sub = ["oop", "os", "dpa", "java", ".net"];
+// sub.fill("nodejs");
+// console.log(sub);
+
+// const a = [1, 2, 3, 4, 5];
+// a.fill(10);
+// console.log(a);
+
+//map
+// const a = [4, 9, 16, 25];
+// const n = a.map(Math.sqrt)
+// console.log(n);
+
