@@ -46,7 +46,7 @@
 //-----------------------------home------------------------------------------------//
 
 // slice                                            //retun a selected elment of array
-// const sub = ["oop", "os", "dpa", "java", ".net"];
+// const sub = ["oop", "os", "dpa", "java", ".net"];   // return part of array
 // const book = sub.slice(1, 3);
 // console.log(book);
 
@@ -54,7 +54,22 @@
 // const n = a.slice(2, 4);
 // console.log(n);
 
-// indexof                                   // return index number of array elemnet 
+//map                                     //transfer into sqrtroot
+// const a = [4, 9, 16, 25];
+// const n = a.map(Math.sqrt)
+// console.log(n);
+
+//filter                                          //filtering array       //return value
+//const a = [1, 2, 3, 4, 5];
+// const n = a.filter(2, 4);
+// console.log(n);
+
+//reduce                                          //return value
+// const a = [1, 2, 3, 4, 5];
+// const n = a.reduce((acc, v, i) => acc+v, 0);
+// console.log(n);
+
+// indexof                                   // return first index of array elemnet    //return index
 // const sub = ["oop", "os", "dpa", "java", ".net"];
 // let index = sub.indexOf("dpa");
 // console.log(index);
@@ -63,13 +78,19 @@
 // const n = a.indexOf(2);
 // console.log(n);
 
-//reverse                                     // return the reverseorder of array element
-// const sub = ["oop", "os", "dpa", "java", ".net"];
-// sub.reverse();
-// console.log(sub);
+// Lastindexof                                   // return last index of array elemnet    //return index
+// const sub = ["oop", "os", "dpa", "java", "dpa"];
+// let lastindex = sub.lastindexOf("dpa");
+// console.log(index);
 
-// const a = [1, 2, 3, 4, 5];
-// a.reverse();
+//every                                          //return true if all element fulfilled the comndition   //return boolean
+//const a = [10, 20, 30, 40, 50];
+// const n = a.every((v) => v>5);
+// console.log(n);
+
+//findindex                                       //return the first index of element
+//const a = [10, 20, 30, 40, 50];
+// const n = a.findindex((v) => v>5);
 // console.log(n);
 
 //fill                                      //new array of element
@@ -81,8 +102,20 @@
 // a.fill(10);
 // console.log(a);
 
-//map
-// const a = [4, 9, 16, 25];
-// const n = a.map(Math.sqrt)
-// console.log(n);
+//sort                                   //sort an array in alphabetes        //return arry
+// const sub = ["oop", "os", "dpa", "java", "node"];
+// sub.sort();
+// console.log(sub);
 
+// const a = [4, 1, 5, 2, 3];            //for numberes
+// a.sort((a,b) => a-b);
+// console.log(a);
+
+//reverse                                     // return the reverseorder of array element         //return arry
+// const sub = ["oop", "os", "dpa", "java", ".net"];
+// sub.reverse();
+// console.log(sub);
+
+// const a = [1, 2, 3, 4, 5];
+// a.reverse();
+// console.log(a);
