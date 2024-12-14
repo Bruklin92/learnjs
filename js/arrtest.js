@@ -27,7 +27,7 @@
 // 5. Search 99 is available or not
 
 // let ans = arr1.includes(99);
-// console.log(ans);
+// console.log(ans);5
 
 //---------------Q2--------------------//
 
@@ -61,7 +61,7 @@
 // 5. Sort arr3 in descending order.
 
 // let ans = arr3.sort((a,b) => b-a);
-// console.log(ans);
+// console.log(ans);10
 
 //---------------Q3--------------------//
 
@@ -97,7 +97,7 @@
 // arr.sort((a,b) => b-a);
 // let max = arr.slice(0, 3);
 // let ans = max.reduce((acc, v, i) => acc+v,0);
-// console.log(ans);
+// console.log(ans);6
 
 
 
@@ -117,4 +117,6 @@ function handlesubmit() {
     print+=
      document.getElementById("disp").innerHTML=text;
 
-}
+}5
+
+30
