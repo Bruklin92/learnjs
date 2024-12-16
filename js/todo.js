@@ -2,7 +2,7 @@ let tododata = [];
 let update = null;
 
 const handleupdate = (i) => {
-    update=tododata[i];
+    tododata[i] = todo;    
     display();
 }
 
@@ -10,7 +10,7 @@ const display = () => {
     
     let print = '<ul>'
     tododata.map((v, i) => {
-        print+=`<li>${v} <button onclick="handleupdate(${i})">E</button> <button onclick="handledelete(${i})">x</button> </li>`;
+        print+=`<li>${v} <button onclick="handleupdate(${i})">E</button> <button onclick="handledelete(${i})">x</button></li>`;
     })
     '</ul>';
     document.getElementById("disp").innerHTML=print;
@@ -35,7 +35,7 @@ const handletodo = () => {
         if (update === null) {
             tododata[todo];
         } else {
-           document.getElementById("todo").value = tododata[i];
+           document.getElementById("todo").value;
            update=null;
         }
 
