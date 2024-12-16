@@ -105,18 +105,18 @@
 // Q-4 Create a todo list that add, display, sort a todo.
 
 
-function handlesubmit() {
-    event.preventDefault();
+// function handlesubmit() {
+//     event.preventDefault();
 
-    let print;
-    let text = document.getElementById("text").value;
-    console.log(text);
-    for (let i=0; i<text[i]; i++) {
-        text.push("text");
-    }
-    print+=
-     document.getElementById("disp").innerHTML=text;
+//     let print;
+//     let text = document.getElementById("text").value;
+//     console.log(text);
+//     for (let i=0; i<text[i]; i++) {
+//         text.push("text");
+//     }
+//     print+=
+//      document.getElementById("disp").innerHTML=text;
 
-}5
+// }5
 
 30
