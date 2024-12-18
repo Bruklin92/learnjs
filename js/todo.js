@@ -2,14 +2,18 @@ let tododata = [];
 let update = null;
 
 const handleupdate = (i) => {
-    tododata[i] = todo;    
+    console.log(i);
+    document.getElementById("todo").value = tododata[i];
     display();
+    update = i;    
 }
 
-const display = () => {
-    
+const display = (fdata) => {
+
+    let finaldata = fdata ? fdata : tododata;
+
     let print = '<ul>'
-    tododata.map((v, i) => {
+    finaldata.map((v, i) => {
         print+=`<li>${v} <button onclick="handleupdate(${i})">E</button> <button onclick="handledelete(${i})">x</button></li>`;
     })
     '</ul>';
@@ -29,23 +33,27 @@ const handletodo = () => {
     const todo = document.getElementById("todo").value;
     
     if (todo) {
-        tododata.push(todo);
         console.log(tododata);
 
         if (update === null) {
-            tododata[todo];
+            tododata.push(todo);
         } else {
-           document.getElementById("todo").value;
-           update=null;
+            tododata[update] = todo;
+            update=null;
         }
 
         display();
-
         document.getElementById("todoerr").innerHTML = "";
         document.getElementById("todo").value = "";
-
     } else {
         document.getElementById("todoerr").innerHTML = "please enter todo";
     }
 
+}
+
+const handlekey = () => {
+    document.getElementById("serch").value;
+
+    let fdata = tododata.filter((v) => v.includes("serch"));
+    display(fdata); 
 }
