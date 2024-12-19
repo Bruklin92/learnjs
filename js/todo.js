@@ -4,6 +4,8 @@ let update = null;
 const handleupdate = (i) => {
     tododata[i] = todo;    
     display();
+    update = i;
+    
 }
 
 const display = () => {
@@ -29,14 +31,13 @@ const handletodo = () => {
     const todo = document.getElementById("todo").value;
     
     if (todo) {
-        tododata.push(todo);
         console.log(tododata);
 
         if (update === null) {
-            tododata[todo];
+            tododata.push(todo);
         } else {
-           document.getElementById("todo").value;
-           update=null;
+            tododata[update] = todo;
+            update=null;
         }
 
         display();
