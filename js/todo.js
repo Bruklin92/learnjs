@@ -49,11 +49,25 @@ const handletodo = () => {
         document.getElementById("todoerr").innerHTML = "please enter todo";
     }
 
-}
+}  
 
 const handlekey = () => {
-    document.getElementById("serch").value;
+    let serch = document.getElementById("serch").value;    
 
-    let fdata = tododata.filter((v) => v.includes("serch"));
+    let fdata = tododata.filter((v) => v.toLowerCase().includes(serch.toLowerCase()));
     display(fdata); 
+}
+
+const handlesort = () => {
+    const sdata = document.getElementById("sort").value;
+
+    if (sdata === "az") {
+        const sdata =  tododata.sort(); 
+        console.log(sdata);
+        display(sdata);
+    } else if (sdata === "za") {
+        const sdata = tododata.sort().reverse(); 
+        console.log(sdata);
+        display(sdata);
+    }
 }
