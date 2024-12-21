@@ -151,60 +151,60 @@
 //     }
 // }
 
-let institues = [
-    {
-        name: 'ABC IT Institute',
-        seat: [
-            {
-                react: 15,
-                node: 20,
-                full_stack: 10,
-                ui_ux: 0
-            },
-        ]
-    },
-    {
-        name: 'XYZ IT Institute',
-        seat: [
-            {
-                react: 0,
-                node: 70,
-                full_stack: 0,
-                ui_ux: 10
-            },
-        ]
-    },
-    {
-        name: 'PQR IT Institute',
-        seat: [
-            {
-                react: 7,
-                node: 0,
-                full_stack: 0,
-                ui_ux: 0
-            },
-        ]
-    },
-    {
-        name: 'MNP IT Institute',
-        seat: [
-            {
-                react: 0,
-                node: 0,
-                full_stack: 0,
-                ui_ux: 0
-            },
-        ]
-    }
-]
+// let institues = [
+//     {
+//         name: 'ABC IT Institute',
+//         seat: [
+//             {
+//                 react: 15,
+//                 node: 20,
+//                 full_stack: 10,
+//                 ui_ux: 0
+//             },
+//         ]
+//     },
+//     {
+//         name: 'XYZ IT Institute',
+//         seat: [
+//             {
+//                 react: 0,
+//                 node: 70,
+//                 full_stack: 0,
+//                 ui_ux: 10
+//             },
+//         ]
+//     },
+//     {
+//         name: 'PQR IT Institute',
+//         seat: [
+//             {
+//                 react: 7,
+//                 node: 0,
+//                 full_stack: 0,
+//                 ui_ux: 0
+//             },
+//         ]
+//     },
+//     {
+//         name: 'MNP IT Institute',
+//         seat: [
+//             {
+//                 react: 0,
+//                 node: 0,
+//                 full_stack: 0,
+//                 ui_ux: 0
+//             },
+//         ]
+//     }
+// ]
 
-let ans = institues.map ((v) => {
-    return{
-        name: v.name,
-        seat: v.seat.map((v) => Object.entries(v).filter([k][vl]) => vl>0 )   
-    }
-})
- console.log(ans);
+// let ans = institues.map ((v) => {
+//     return{
+//         name: v.name,
+//         seat: v.seat.map((v) => Object.entries(v).filter([k][vl]) => vl>0 )   
+//     }
+// })
+//  console.log(ans);
  
 
 
