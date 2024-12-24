@@ -1,6 +1,5 @@
 let arr = [];
 
-
 const display = () => {
     let print = `<table border = "1"><tr>
             <th>Name</th>
@@ -15,12 +14,19 @@ const display = () => {
             <td>${v.name}</td>
             <td>${v.age}</td>
             <td>${v.sal}</td>
-            <td><button onclick="handledelete(${i})">X</button> </td>
+            <td><button onclick="handledelete(${i})">X</button> <button onclick="handleupdate(${i})">E</button></td>
         </tr>`
           '</table>';
 
     })
     document.getElementById("disp").innerHTML=print;
+}
+
+const handleupdate = (i) => {
+    console.log(i);
+    document.getElementById("obj").value = arr[i];
+    display();
+    update = i;
 }
 
 const handledelete = (i) => {
