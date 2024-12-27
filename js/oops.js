@@ -89,7 +89,7 @@ class Authore {
         console.log("Mobile no: ", this.mobile_no);
     }
 }
-
+//child class
 class Book extends Authore {
     constructor(n,c,m,bn,p) {
         super(n,c,m);
@@ -104,4 +104,4 @@ class Book extends Authore {
 }
 
 const book = new Book("Amit Patel", "Surat", 9876543215, "A.P.J", 350);
-book.book_info();
+book.book_info(); 
