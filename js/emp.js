@@ -10,6 +10,9 @@ const display = () => {
             <th>Salary</th>
             <th>Act</th>
        </tr>`
+
+       console.log(localdata);
+       
   
        localdata.map((v) => {
     print+=`
@@ -55,6 +58,8 @@ const handleupdate = (id) => {
     document.getElementById("age").value = obj.age;
     document.getElementById("salary").value = obj.salary;
 
+    update = id;
+
 }
 
 const handlesubmit = () => {
@@ -81,21 +86,19 @@ const handlesubmit = () => {
             localStorage.setItem("emp",JSON.stringify([obj]));
         }
     } else {
-
-        let localdata = JSON.parse(localStorage.getItem("emp"));
-
         let index = localdata.findIndex((v) => v.id === update);        
 
-        localdata[update] = obj;
+        localdata[index] = obj;
 
-        localStorage.setItem("emp", JSON.stringify(obj));
-
-        console.log(localdata);
+        localStorage.setItem("emp", JSON.stringify(localdata));
 
         update = null;
 
     }
-  
+    document.getElementById("name").value = '';
+    document.getElementById("age").value = '';
+    document.getElementById("salary").value = '';
+
     display();
 
 }
