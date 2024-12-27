@@ -75,7 +75,7 @@
 
 
 
-
+//parent classs
 
 class Authore {
     constructor(n,c,m) {
