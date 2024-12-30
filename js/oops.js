@@ -77,31 +77,128 @@
 
 //parent classs
 
-class Authore {
-    constructor(n,c,m) {
-        this.name = n;
-        this.city = c;
-        this.mobile_no = m;
-    }
-    Authore_info() {
-        console.log("Authore name: ", this.name);
-        console.log("City: ", this.city);
-        console.log("Mobile no: ", this.mobile_no);
-    }
-}
-//child class
-class Book extends Authore {
-    constructor(n,c,m,bn,p) {
-        super(n,c,m);
-        this.book_name = bn;
-        this.price = p;
-    }
-    book_info() {
-        this.Authore_info();
-        console.log("Book name: ", this.book_name);
-        console.log("Price: ", this.price);
+// class Authore {
+//     constructor(n,c,m) {
+//         this.name = n;
+//         this.city = c;
+//         this.mobile_no = m;
+//     }
+//     Authore_info() {
+//         console.log("City: ", this.city);
+//         console.log("Mobile no: ", this.mobile_no);
+//     }
+// }
+// //child class
+// class Book extends Authore {
+//     constructor(n,c,m,bn,p) {
+//         super(n,c,m);
+//         this.book_name = bn;
+//         this.price = p;
+//     }
+//     book_info() {
+//         this.Authore_info();
+//         console.log("Book name: ", this.book_name);
+//         console.log("Price: ", this.price);
+//         console.log("Authore name: ", this.name);
+
+//     }
+// }
+
+// const book = new Book("Amit Patel", "Surat", 9876543215, "A.P.J", 350);
+// book.book_info(); 
+
+
+
+// class  emp {
+//     id;
+//     name;
+//     #salary;
+//     #insentive;
+
+//     constructor(i,n,s) {
+//         this.id = i;
+//         this.name=n;
+//         this.#salary=s;
+//     }
+
+//     set insentive(inte) {
+//         this.#insentive=inte;
+//     }
+
+//     get insentive() {
+//         return this.#insentive;
+//     }
+
+//     getinfo() {
+//         console.log("id is: ",this.id);
+//         console.log("Name is: ",this.name);
+//         console.log("salary is: ",this.#salary);
+//     }
+// }
+
+// const e1 = new emp (101,"meet",50000);
+// e1.getinfo();
+
+// e1.insentive = 2000;
+// console.log("insentive: ",this.insentive);
+
+
+// class shap {
+//     constructor(n) {
+//         this.name = n;
+//     }
+//     getarea() {
+//         throw Error ("you have not any access");
+//     }
+// }
+
+// class circle extends shap {
+//     constructor(r) {
+//         super();
+//         this.radius = r;
+//     }
+//     getarea() {
+//         console.log("Area is: ",3014*this.radius*this.radius);
+//     }
+// }
+
+// class rectangle extends shap {
+//     constructor(l,w) {
+//         super();
+//         this.length = l;
+//         this.width = w;
+//     }
+//     getarea() {
+//         console.log("Area is: ", this.length*this.width);
+//     }
+// }
+
+// const s1 = new shap();
+// // s1.getarea();
+
+// const c1 = new circle(10);
+// c1.getarea();
+
+// const r1 = new rectangle(10,20);
+// r1.getarea();
+
+
+
+class Animal {
+    getvoice () {
+        console.log("Animal voice");
     }
 }
 
-const book = new Book("Amit Patel", "Surat", 9876543215, "A.P.J", 350);
-book.book_info(); 
+class Dog extends Animal {
+    getvoice () {
+        console.log("Dog voice");
+    }
+}
+
+class Cat extends Dog {
+  
+}
+
+const d = new Cat();
+d.getvoice();
