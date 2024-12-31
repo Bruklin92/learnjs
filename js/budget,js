@@ -1,0 +1,71 @@
+
+class Budget {
+    constructor() {
+        this.budeget = document.getElementById("bud_name");
+    }
+
+    handlebudget() {
+        event.preventDefault();
+
+        console.log(this.budeget.value);
+
+        if (this.budeget.value === '') {
+            document.getElementById("numErr").innerHTML = "Please Enter Budget";
+        } else {
+            if (parseInt(this.budeget.value) < 0 || isNaN(this.budeget.value)) {
+                document.getElementById("numErr").innerHTML = "Please Enter valid Budget";
+            } else{
+                document.getElementById("numErr").innerHTML = "";
+                const budeget = localStorage.setItem("budget",this.budeget.value);
+            }
+        }
+        
+    }
+}
+
+class Expance extends Budget {
+    constructor() {
+        super();
+        this.exp_name = document.getElementById("exp_name");
+        this.exp_amu = document.getElementById("amu");
+    }
+
+    handledata() {
+        const budeget = localStorage.getItem("budget",this.budeget.value);
+        document.getElementById("bud_get").innerHTML = budeget;
+    }
+
+    handleexpance() {
+        console.log(this.exp_name.value);
+        
+        if (this.exp_name.value === '') {
+            document.getElementById("expErr").innerHTML = "Please Enter Expance";
+        } else {
+            document.getElementById("expErr").innerHTML = "";
+        }
+
+        if (this.exp_amu.value === '') {
+            document.getElementById("amuErr").innerHTML = "Please Enter Expance";
+        } else {
+            if (parseInt(this.exp_amu.value) < 0) {
+                document.getElementById("amuErr").innerHTML = "Please Enter Valid Expance";
+            } else{
+                document.getElementById("amuErr").innerHTML = "";
+            }
+        }
+
+    }
+
+}
+
+
+const b = new Budget();
+
+const e = new Expance();
+e.handledata();
+
+const budeget = document.getElementById("budgetForm");
+budeget.addEventListener("submit",function() {
+    b.handlebudget();
+    e.handleexpance();
+})

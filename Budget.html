@@ -13,47 +13,58 @@
       <div class="container">
         <h2 class="main-had">Budget App</h2>
         
+     <form action="" id="budgetForm">
         <div id="budget">
             <span>Pleace enter yout Budget</span>
             <br><br>
-            <input type="text" name="bud_name" id="bud_name">
+            <input type="number" name="bud_name" id="bud_name">
+            <br><br>
+            <span id="numErr"></span>
             <br><br>
             <button id="btn1">Calculate</button>
         </div>
 
+        
         <div id="expance">
             <span>Pleace Enter Your Expance</span>
             <br><br>
             <input type="text" name="exp_name" id="exp_name">
             <br><br>
+            <span id="expErr"></span>
+            <br><br>
             <span>Pleace Enter Expance Amount</span>
             <br><br>
             <input type="text" name="amu" id="amu">
             <br><br>
-            <button id="btn2">Calculate</button>
+            <span id="amuErr"></span>
+            <br><br>
+            <button id="btn2">Add Expance</button>
         </div>
 
+     </form>
+
         <div id="balance">
+
             <div id="buget">
                 <span>BUDGET</span>
                 <i class="fa-solid fa-money-bill"></i>
-                <h2 id="bud_get">$</h2>
+                <span id="bud_get">$</span>
+                <span>$</span>
             </div>
 
             <div id="exp">
                 <span>EXPANCE</span>
-                <i class="fa-regular fa-credit-card"></i>                <h2 id="bud_get">$</h2>
+                <i class="fa-regular fa-credit-card"></i>           
+                <span id="exp_amu">$</span>
             </div>
 
             <div id="cradt">
                 <span>BALANCE</span>
                 <i class="fa-solid fa-dollar-sign"></i>
-                <h2 id="bud_get">$</h2>
+                <span id="bala_amu">$</span>
             </div>
-        </div>
 
-        <div class="value">
-            <div id="table1">
+            <div id="disp">
                 <table border="1">
                     <tr>
                         <th>Expance</th>
@@ -66,9 +77,12 @@
                     </tr>
                 </table>
             </div>
+
         </div>
 
-      </div>
-    </section>  
+        </section>
+    
+    
+    <script src="js/budget,js"></script>
 </body>
 </html>
