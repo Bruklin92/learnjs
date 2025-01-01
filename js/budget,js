@@ -1,7 +1,24 @@
-
 class Budget {
     constructor() {
         this.budeget = document.getElementById("bud_name");
+        this.expamu = document.getElementById("amu");
+    }
+
+    handledata() {
+        let budeget = localStorage.getItem("budget",this.budeget.value);
+        let exp = localStorage.getItem("expance",this.expamu.value);
+
+        if (budeget){
+            document.getElementById("bud_get").innerHTML = budeget;
+        }
+
+        let totalexp;
+
+        if (totalexp) {
+            totalexp = exp.reduce((acc, v) => acc+v.exp_amu, 0);            
+            document.getElementById("expamu").innerHTML = totalexp;
+            console.log(totalexp);
+        }
     }
 
     handlebudget() {
@@ -19,7 +36,7 @@ class Budget {
                 const budeget = localStorage.setItem("budget",this.budeget.value);
             }
         }
-        
+        this.handledata();
     }
 }
 
@@ -27,45 +44,64 @@ class Expance extends Budget {
     constructor() {
         super();
         this.exp_name = document.getElementById("exp_name");
-        this.exp_amu = document.getElementById("amu");
-    }
-
-    handledata() {
-        const budeget = localStorage.getItem("budget",this.budeget.value);
-        document.getElementById("bud_get").innerHTML = budeget;
+        this.expamu = document.getElementById("amu");
     }
 
     handleexpance() {
-        console.log(this.exp_name.value);
-        
+        event.preventDefault();
+
+        let expErr = false;
+
         if (this.exp_name.value === '') {
-            document.getElementById("expErr").innerHTML = "Please Enter Expance";
+            document.getElementById("expErr").innerHTML = "Please Enter Expance Name";
         } else {
             document.getElementById("expErr").innerHTML = "";
         }
 
         if (this.exp_amu.value === '') {
-            document.getElementById("amuErr").innerHTML = "Please Enter Expance";
+            document.getElementById("amuErr").innerHTML = "Please Enter Expance Amount";
+            let expErr = true;
         } else {
-            if (parseInt(this.exp_amu.value) < 0) {
-                document.getElementById("amuErr").innerHTML = "Please Enter Valid Expance";
+            if (parseInt(this.exp_amu.value) < 0 || isNaN(this.exp_amu.value)) {
+                document.getElementById("amuErr").innerHTML = "Please Enter Valid Expance Amount";
+                let expErr = true;
             } else{
                 document.getElementById("amuErr").innerHTML = "";
             }
         }
 
-    }
+        if (!expErr) {
+            let localexp = JSON.parse(localStorage.getItem("expance"));
 
+            console.log(localexp);
+
+            let obj = {
+                id : Math.floor(Math.random()*10),
+                exp_name : this.exp_name.value,
+                expamu :  this.expamu.value
+            }
+
+            if (localexp) {
+                localexp.push(obj);
+                localStorage.setItem("expance",JSON.stringify(localexp));
+            } else{
+                localStorage.setItem("expance",JSON.stringify([obj]));
+            }
+        }
+        this.handledata();
+    }
 }
 
-
 const b = new Budget();
-
 const e = new Expance();
 e.handledata();
 
 const budeget = document.getElementById("budgetForm");
 budeget.addEventListener("submit",function() {
     b.handlebudget();
+})
+
+const expance = document.getElementById("formExpance");
+expance.addEventListener("submit",function() {
     e.handleexpance();
 })
