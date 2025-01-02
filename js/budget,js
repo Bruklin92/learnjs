@@ -1,24 +1,28 @@
 class Budget {
     constructor() {
         this.budeget = document.getElementById("bud_name");
-        this.expamu = document.getElementById("amu");
     }
 
     handledata() {
-        let budeget = localStorage.getItem("budget",this.budeget.value);
-        let exp = localStorage.getItem("expance",this.expamu.value);
+        let budeget = localStorage.getItem("budget");
+        
+        let handlexp = JSON.parse(localStorage.getItem("expance"));
+        let totalexp;
 
-        if (budeget){
+        if (budeget) {
             document.getElementById("bud_get").innerHTML = budeget;
         }
 
-        let totalexp;
-
-        if (totalexp) {
-            totalexp = exp.reduce((acc, v) => acc+v.exp_amu, 0);            
-            document.getElementById("expamu").innerHTML = totalexp;
-            console.log(totalexp);
+        if (handlexp) {
+            totalexp = handlexp.reduce((acc, v) => acc+v.expamu, 0);            
+            document.getElementById("exp_amu").innerHTML = totalexp;
         }
+
+        if (budeget && totalexp) {
+            let bal = parseInt(budeget) - totalexp;
+            document.getElementById("bala_amu").innerHTML = bal;
+        }  
+        console.log(totalexp);
     }
 
     handlebudget() {
@@ -49,7 +53,6 @@ class Expance extends Budget {
 
     handleexpance() {
         event.preventDefault();
-
         let expErr = false;
 
         if (this.exp_name.value === '') {
@@ -58,13 +61,13 @@ class Expance extends Budget {
             document.getElementById("expErr").innerHTML = "";
         }
 
-        if (this.exp_amu.value === '') {
+        if (this.expamu.value === '') {
             document.getElementById("amuErr").innerHTML = "Please Enter Expance Amount";
-            let expErr = true;
+             expErr = true;
         } else {
-            if (parseInt(this.exp_amu.value) < 0 || isNaN(this.exp_amu.value)) {
+            if (parseInt(this.expamu.value) < 0 || isNaN(this.expamu.value)) {
                 document.getElementById("amuErr").innerHTML = "Please Enter Valid Expance Amount";
-                let expErr = true;
+                expErr = true;
             } else{
                 document.getElementById("amuErr").innerHTML = "";
             }
@@ -78,9 +81,8 @@ class Expance extends Budget {
             let obj = {
                 id : Math.floor(Math.random()*10),
                 exp_name : this.exp_name.value,
-                expamu :  this.expamu.value
-            }
-
+                expamu :  parseInt(this.expamu.value),
+            };
             if (localexp) {
                 localexp.push(obj);
                 localStorage.setItem("expance",JSON.stringify(localexp));
